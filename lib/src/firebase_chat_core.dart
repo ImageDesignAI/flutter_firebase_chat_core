@@ -455,10 +455,10 @@ class FirebaseChatCore {
 
               final data = doc.data();
 
-              data['createdAt'] = data['createdAt']?.millisecondsSinceEpoch;
+              //data['createdAt'] = data['createdAt']?.millisecondsSinceEpoch;
               data['id'] = doc.id;
-              data['lastSeen'] = data['lastSeen']?.millisecondsSinceEpoch;
-              data['updatedAt'] = data['updatedAt']?.millisecondsSinceEpoch;
+              //data['lastSeen'] = data['lastSeen']?.millisecondsSinceEpoch;
+              //data['updatedAt'] = data['updatedAt']?.millisecondsSinceEpoch;
 
               return [...previousValue, types.User.fromJson(data)];
             },
