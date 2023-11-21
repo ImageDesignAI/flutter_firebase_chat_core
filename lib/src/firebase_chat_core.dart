@@ -369,8 +369,8 @@ class FirebaseChatCore {
       final messageMap = message.toJson();
       messageMap.removeWhere((key, value) => key == 'author' || key == 'id');
       messageMap['authorId'] = firebaseUser!.uid;
-      messageMap['createdAt'] = FieldValue.serverTimestamp();
-      messageMap['updatedAt'] = FieldValue.serverTimestamp();
+      messageMap['createdAt'] = DateTime.now().millisecondsSinceEpoch; //FieldValue.serverTimestamp();
+      messageMap['updatedAt'] = DateTime.now().millisecondsSinceEpoch; //FieldValue.serverTimestamp();
 
       await getFirebaseFirestore()
           .collection('${config.roomsCollectionName}/$roomId/messages')
