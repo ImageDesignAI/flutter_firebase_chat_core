@@ -267,9 +267,9 @@ class FirebaseChatCore {
               );
 
               data['author'] = author.toJson();
-              data['createdAt'] = data['createdAt']?.millisecondsSinceEpoch;
+              //data['createdAt'] = data['createdAt']?.millisecondsSinceEpoch;
               data['id'] = doc.id;
-              data['updatedAt'] = data['updatedAt']?.millisecondsSinceEpoch;
+              //data['updatedAt'] = data['updatedAt']?.millisecondsSinceEpoch;
 
               return [...previousValue, types.Message.fromJson(data)];
             },
